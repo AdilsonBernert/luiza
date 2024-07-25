@@ -22,23 +22,37 @@ header {
     display: flex;
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     align-items: center; /* Alinha o conteúdo verticalmente */
-    position: relative; /* Necessário para a animação */
+    flex-direction: column; /* Ajusta a direção para coluna */
 }
 
 header .logo {
-    position: absolute;
-    left: 0;
     animation: moveToCenter 2s forwards; /* Define a animação */
+    margin-bottom: 20px; /* Adiciona um espaço entre o logotipo e o texto */
 }
 
 @keyframes moveToCenter {
     0% {
         left: 0;
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
     100% {
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+
+header .title {
+    animation: moveToCenterText 2s forwards; /* Define a animação para o texto */
+}
+
+@keyframes moveToCenterText {
+    0% {
+        right: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 
